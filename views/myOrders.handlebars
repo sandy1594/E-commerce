@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Orders</title>
+</head>
+<body>
+    <h1 class="ml-3">My Orders</h1>
+<br>
+
+<div class="card ml-3 border-bottom" style="width: 18rem;">
+    {{#each myOrders}}
+    <p><strong>Order ID:</strong> {{this.uuid}}</p>
+  <img src="{{image}}" class="card-img-top ml-3" alt="..." style="height: 100px; width:100px" >
+  <div class="border-bottom border-dark">   
+    <p class="card-text ml-3">{{brand}} {{name}}</p>
+    <p class="card-text ml-3">Rs. {{price}}</p>
+    <br>
+  </div>
+{{/each}}
+
+</div>
+
+</body>
+</html>

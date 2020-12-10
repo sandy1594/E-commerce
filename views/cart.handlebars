@@ -1,0 +1,25 @@
+<span>
+  <h1>Cart</h1>
+  <form action="/placeorder" method="POST" >
+     <button class="btn btn-primary float-left" style="margin-left: 89%; margin-top: 6px;" type="submit">Place your Order</button>
+  </form>
+  
+</span>
+<div class="border border-dark mb-4"></div>
+{{#each cartItems}}  
+
+   <div class="card m-4" style="width: 400px; height: 300px">
+       <img class="float-left m-1" src="{{image}}" alt="" style=" width:100px; height: 100px;">
+  <div class="card-body float-right">
+    <h5 class="card-title">{{brand}} {{name}}</h5>
+    <p class="card-text">Rs. {{price}} &nbsp; &nbsp; &nbsp; Quantity {{quantity}}</p>
+    <form action="/delete/{{id}}?_method=DELETE" method="POST">
+        <button class="btn btn-primary" type="submit">Remove</button>
+    </form>
+  </div>
+</div>
+        {{/each}}
+
+        <h4 class="m-4" name="total">Total Value {{total}}</h4>
+
+</div>
